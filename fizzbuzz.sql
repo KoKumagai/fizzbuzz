@@ -1,0 +1,23 @@
+SELECT
+  CASE
+    WHEN number % 15 = 0
+      THEN 'FizzBuzz'
+    WHEN number % 3 = 0
+      THEN 'Fizz'
+    WHEN number % 5 = 0
+      THEN 'Buzz'
+    ELSE number
+  END AS FizzBuzz
+FROM
+  (
+    SELECT
+      @n := @n + 1 AS number
+    FROM
+      (SELECT @n := 0) AS t1,
+      (SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) AS t2,
+      (SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) AS t3,
+      (SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) AS t4,
+      (SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) AS t5
+      LIMIT 100
+  ) AS numbers
+;
