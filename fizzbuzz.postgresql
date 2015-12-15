@@ -1,0 +1,13 @@
+SELECT
+  CASE
+    WHEN number % 15 = 0
+      THEN 'FizzBuzz'
+    WHEN number % 3 = 0
+      THEN 'Fizz'
+    WHEN number % 5 = 0
+      THEN 'Buzz'
+    ELSE number::text
+  END AS FizzBuzz
+FROM
+  GENERATE_SERIES(1, 100) AS number
+;
