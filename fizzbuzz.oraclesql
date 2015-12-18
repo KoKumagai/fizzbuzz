@@ -1,0 +1,14 @@
+SELECT
+  CASE
+    WHEN MOD(LEVEL, 15) = 0
+      THEN 'FizzBuzz'
+    WHEN MOD(LEVEL, 3) = 0
+      THEN 'Fizz'
+    WHEN MOD(LEVEL, 5) = 0
+      THEN 'Buzz'
+    ELSE TO_CHAR(LEVEL)
+  END FizzBuzz
+FROM
+  DUAL
+CONNECT BY LEVEL <= 100
+;
