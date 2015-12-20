@@ -1,0 +1,24 @@
+WITH numbers AS (
+  SELECT 1 AS number
+  UNION ALL
+  SELECT
+    number + 1
+  FROM
+    numbers
+  LIMIT
+    100
+)
+
+SELECT
+  CASE
+    WHEN number % 15 = 0
+      THEN 'FizzBuzz'
+    WHEN number % 5 = 0
+      THEN 'Buzz'
+    WHEN number % 3 = 0
+      THEN 'Fizz'
+    ELSE CAST(number AS TEXT)
+  END AS FizzBuzz
+FROM
+  numbers
+;
