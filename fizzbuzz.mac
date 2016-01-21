@@ -1,0 +1,12 @@
+#i = 1;
+while(#i <= 100) {
+  if(#i % 15 == 0)
+    insert "FizzBuzz\n";
+  else if(#i % 3 == 0)
+    insert "Fizz\n";
+  else if(#i % 5 == 0)
+    insert "Buzz\n";
+  else
+    insert str(#i) + "\n";
+  #i = #i + 1;
+}
