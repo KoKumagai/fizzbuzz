@@ -1,0 +1,19 @@
+//<div class="fizzbuzz"></div>
+
+$content: "";
+
+@for $i from 1 through 100 {
+  @if $i % 15 == 0 {
+    $content: append($content, "FizzBuzz ");
+  } @elseif $i % 3 == 0 {
+    $content: append($content, "Fizz ");
+  } @elseif $i % 5 == 0 {
+    $content: append($content, "Buzz ");
+  } @else {
+    $content: append($content, "#{$i} ");
+  }
+}
+
+.fizzbuzz:before {
+  content: $content;
+}
