@@ -1,0 +1,7 @@
+(do ((i 1 (+ i 1)))
+    ((> i 100))
+    (cond ((= 0 (modulo i 15)) (display "FizzBuzz") (newline))
+          ((= 0 (modulo i 3))  (display "Fizz") (newline))
+          ((= 0 (modulo i 5))  (display "Buzz") (newline))
+          (else                (display i) (newline)))
+)
