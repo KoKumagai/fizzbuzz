@@ -1,0 +1,18 @@
+Begin
+  integer i, printed;
+  for i := 1 step 1 until 100 do begin
+    printed := 0;
+    if mod(i, 3) = 0 then begin
+      printed := 1;
+      OutText("Fizz");
+    end;
+    if mod(i, 5) = 0 then begin
+      printed := 1;
+      OutText("Buzz");
+    end;
+    if printed ne 1 then begin
+      OutInt(i, 3);
+    end;
+    OutImage;
+  end;
+End;
